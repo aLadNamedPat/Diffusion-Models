@@ -1,107 +1,11 @@
 import torch
 import torch.nn.functional as F
 import torch.nn as nn
+from Attention import AttentionLayer
+from Embedding import SinusoidalEmbedding
+from Residual import ResidualBlock
 
 # A LOT OF HELP FROM: https://github.com/filipbasara0/simple-diffusion/blob/main/simple_diffusion/
-
-# Embed the timestep of the action being performed in a sinusoidal fashion
-# Recommend looking at this article for more info! 
-# https://kazemnejad.com/blog/transformer_architecture_positional_encoding/
-
-class SinusoidalEmbedding(nn.Module):
-    def __init__(
-        self,
-        embedding_dims : int = 100, 
-    ) -> None:
-        super(SinusoidalEmbedding, self).__init__()
-        self.embedding_dims = embedding_dims            # Embedding dims is d
-        self.k_max = embedding_dims // 2
-        
-    def forward(
-        self,
-        t : int
-    ) -> torch.tensor:
-        vals = torch.arange(0, self.k_max, dtype = torch.float32)
-        w_ks = torch.exp(torch.log(10000) * -vals / self.k_max - 1)
-        t = torch.tensor(t, dtype=torch.float32)
-
-        sins = torch.sin(w_ks * t)
-        cos = torch.cos(w_ks * t)
-
-        pe = torch.zeros(self.embedding_dims)
-        pe[0::2] = sins
-        pe[1::2] = cos
-        return pe
-    
-# Build a residual block based on the Wide ResNet architecture
-class ResidualBlock(nn.Module):
-    def __init__(
-        self,
-        input_channels : int,
-        output_channels : int,
-        time_embed_size : torch.tensor
-    ) -> None:
-        # The goal of a residual block is to send residual data through while performing whatever needed function
-
-        self.input_channels = input_channels
-        self.output_channels = output_channels
-        
-        self.time_embedding = nn.Sequential(
-            nn.LeakyReLU(),
-            nn.Linear(time_embed_size, output_channels),
-            nn.LeakyReLU()
-        )
-
-        if input_channels != output_channels:
-            self.residual = nn.Conv2d(
-                input_channels,
-                output_channels,
-                kernel_size = 1
-            )
-        else:
-            self.residual = nn.Identity()
-
-        self.block_one = nn.Sequential(
-            nn.Conv2d(
-                input_channels,
-                output_channels,
-                kernel_size = 3,
-                padding = 2,
-            ),
-            nn.BatchNorm2d(
-                output_channels
-                ),
-            nn.LeakyReLU()
-        )
-
-        self.block_two =  nn.Sequential(
-            nn.Conv2d(
-                output_channels,
-                output_channels,
-                kernel_size=3,
-                padding = 2,
-            ),
-            nn.BatchNorm2d(
-                output_channels,
-            ),
-            nn.LeakyReLU()
-        )
-
-    def forward(
-        self,
-        input : torch.tensor,
-        time_embed : torch.tensor,
-    ):
-        res = self.residual(input)  # Convert the input channels to the output channels
-        x = self.block_one(input) # Find the result of taking block one
-
-        x += self.time_embedding(time_embed)[:, :, None, None] # Add the time embedding to the 
-
-        x = self.block_two(x)
-
-        return res + x
-
-
 # Use a U-Net encoder-decoder architecture to predict the noise
 class UNet(nn.Module):
     def __init__(
