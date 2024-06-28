@@ -4,6 +4,8 @@ import torch.nn as nn
 # Recommend looking at this article for more info! 
 # https://kazemnejad.com/blog/transformer_architecture_positional_encoding/
 
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
 class SinusoidalEmbedding(nn.Module):
     def __init__(
         self,
@@ -15,16 +17,21 @@ class SinusoidalEmbedding(nn.Module):
         
     def forward(
         self,
-        t : int
-    ) -> torch.tensor:
-        vals = torch.arange(0, self.k_max, dtype = torch.float32)
-        w_ks = torch.exp(torch.log(10000) * -vals / self.k_max - 1)
-        t = torch.tensor(t, dtype=torch.float32)
+        t : torch.Tensor
+    ) -> torch.Tensor:
+        vals = torch.arange(0, self.k_max, dtype = torch.float32).to(device)
+        w_ks = torch.exp(torch.log(torch.tensor(10000.0)) * -vals / self.k_max).to(device)
 
-        sins = torch.sin(w_ks * t)
-        cos = torch.cos(w_ks * t)
+        # print("vals:", vals)
+        # print("w_ks:", w_ks)
 
-        pe = torch.zeros(self.embedding_dims)
-        pe[0::2] = sins
-        pe[1::2] = cos
+        t = torch.tensor(t, dtype=torch.float32).to(device)
+
+        sins = torch.sin(torch.ger(t, w_ks)).to(device)
+        cos = torch.cos(torch.ger(t, w_ks)).to(device)
+
+        pe = torch.zeros((t.shape[0], self.embedding_dims), dtype=torch.float32).to(device)
+        pe[:, 0::2] = sins
+        pe[:, 1::2] = cos
+
         return pe

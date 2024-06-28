@@ -8,7 +8,7 @@ class AttentionLayer(nn.Module):
         self,
         n_channels : int,
     ) -> None:
-        
+        super(AttentionLayer, self).__init__()
         self.gamma = nn.Parameter(torch.tensor([0.]))
         self.q = nn.Conv2d(
             in_channels=n_channels,
@@ -87,4 +87,65 @@ class AttentionLayer(nn.Module):
         o = o.view(batch_size, channels, w, h)
 
         o = self.gamma * o + input
-        return o, attention
+        
+        return o
+
+
+class MultiHeadedAttention(nn.Module):
+    def __init__(
+        self,
+        n_channels : int,
+        num_heads : int,
+    ):
+        super(MultiHeadedAttention, self).__init__()
+
+        assert n_channels % num_heads == 0, "Number of channels must be divisible"
+
+        self.channels = n_channels
+        self.num_heads = num_heads
+        self.gamma = nn.Parameter(torch.tensor([0.]))
+        
+        self.q = nn.Conv2d(
+            in_channels=n_channels,
+            out_channels=n_channels,
+            kernel_size=1
+        )
+        
+        self.k = nn.Conv2d(
+            in_channels=n_channels,
+            out_channels=n_channels,
+            kernel_size = 1
+        )
+
+        self.v = nn.Conv2d(
+            in_channels=n_channels,
+            out_channels=n_channels,
+            kernel_size = 1
+        )
+
+        self.l = nn.Conv2d(
+            in_channels= n_channels,
+            out_channels= n_channels,
+            kernel_size= 1
+        )
+        self.softmax = nn.Softmax(dim = -1)
+    
+    def forward(
+        self,
+        input : torch.Tensor
+    ) -> torch.Tensor:
+        
+        batch_size, channels, w, h = input.size()
+
+        query = self.q(input).view(batch_size, self.num_heads, -1,  w * h).permute(0, 1, 3, 2)
+        key = self.k(input).view(batch_size, self.num_heads, -1 , w * h)
+        value = self.v(input).view(batch_size, self.num_heads, -1, w * h)
+
+        attention = self.softmax(torch.matmul(query, key) / torch.sqrt(torch.tensor(self.channels / self.num_heads, dtype = torch.float32)))
+
+        o = torch.matmul(attention, value)
+        o = o.view(batch_size, channels, w, h)
+        o = self.l(o)
+        o = self.gamma * o + input
+
+        return o
