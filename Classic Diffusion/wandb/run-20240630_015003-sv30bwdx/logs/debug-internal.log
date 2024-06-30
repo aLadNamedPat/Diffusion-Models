@@ -1,0 +1,227 @@
+2024-06-30 01:50:03,808 INFO    StreamThr :12353 [internal.py:wandb_internal():85] W&B internal server running at pid: 12353, started at: 2024-06-30 01:50:03.807800
+2024-06-30 01:50:03,809 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: status
+2024-06-30 01:50:03,811 INFO    WriterThread:12353 [datastore.py:open_for_write():87] open: /home/patrick/Documents/ML/Diffusion/Classic Diffusion/wandb/run-20240630_015003-sv30bwdx/run-sv30bwdx.wandb
+2024-06-30 01:50:03,811 DEBUG   SenderThread:12353 [sender.py:send():378] send: header
+2024-06-30 01:50:03,814 DEBUG   SenderThread:12353 [sender.py:send():378] send: run
+2024-06-30 01:50:04,057 INFO    SenderThread:12353 [dir_watcher.py:__init__():211] watching files in: /home/patrick/Documents/ML/Diffusion/Classic Diffusion/wandb/run-20240630_015003-sv30bwdx/files
+2024-06-30 01:50:04,057 INFO    SenderThread:12353 [sender.py:_start_run_threads():1123] run started: sv30bwdx with start time 1719726603.807587
+2024-06-30 01:50:04,063 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: check_version
+2024-06-30 01:50:04,064 DEBUG   SenderThread:12353 [sender.py:send_request():405] send_request: check_version
+2024-06-30 01:50:04,142 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: run_start
+2024-06-30 01:50:04,150 DEBUG   HandlerThread:12353 [system_info.py:__init__():26] System info init
+2024-06-30 01:50:04,150 DEBUG   HandlerThread:12353 [system_info.py:__init__():41] System info init done
+2024-06-30 01:50:04,150 INFO    HandlerThread:12353 [system_monitor.py:start():194] Starting system monitor
+2024-06-30 01:50:04,150 INFO    SystemMonitor:12353 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-06-30 01:50:04,150 INFO    HandlerThread:12353 [system_monitor.py:probe():214] Collecting system info
+2024-06-30 01:50:04,151 INFO    SystemMonitor:12353 [interfaces.py:start():188] Started cpu monitoring
+2024-06-30 01:50:04,151 INFO    SystemMonitor:12353 [interfaces.py:start():188] Started disk monitoring
+2024-06-30 01:50:04,152 INFO    SystemMonitor:12353 [interfaces.py:start():188] Started gpu monitoring
+2024-06-30 01:50:04,152 INFO    SystemMonitor:12353 [interfaces.py:start():188] Started memory monitoring
+2024-06-30 01:50:04,152 INFO    SystemMonitor:12353 [interfaces.py:start():188] Started network monitoring
+2024-06-30 01:50:04,176 DEBUG   HandlerThread:12353 [system_info.py:probe():150] Probing system
+2024-06-30 01:50:04,178 DEBUG   HandlerThread:12353 [system_info.py:_probe_git():135] Probing git
+2024-06-30 01:50:04,182 DEBUG   HandlerThread:12353 [system_info.py:_probe_git():143] Probing git done
+2024-06-30 01:50:04,182 DEBUG   HandlerThread:12353 [system_info.py:probe():198] Probing system done
+2024-06-30 01:50:04,182 DEBUG   HandlerThread:12353 [system_monitor.py:probe():223] {'os': 'Linux-6.5.0-41-generic-x86_64-with-glibc2.35', 'python': '3.10.12', 'heartbeatAt': '2024-06-30T05:50:04.176077', 'startedAt': '2024-06-30T05:50:03.800770', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': '/home/patrick/Documents/ML/Diffusion/Classic Diffusion/train.py', 'codePathLocal': 'train.py', 'codePath': 'Classic Diffusion/train.py', 'git': {'remote': 'https://github.com/aLadNamedPat/Diffusion.git', 'commit': '2f3de759189780b85a865ddd7b4222beccb0a419'}, 'email': 'Pattheboy135@gmail.com', 'root': '/home/patrick/Documents/ML/Diffusion', 'host': 'patrick-Swift-SFX14-41G', 'username': 'patrick', 'executable': '/usr/bin/python3', 'cpu_count': 8, 'cpu_count_logical': 16, 'cpu_freq': {'current': 2.926, 'min': 400.0, 'max': 4507.0}, 'cpu_freq_per_core': [{'current': 3.179, 'min': 400.0, 'max': 4507.0}, {'current': 4.025, 'min': 400.0, 'max': 4507.0}, {'current': 3.707, 'min': 400.0, 'max': 4507.0}, {'current': 0.4, 'min': 400.0, 'max': 4507.0}, {'current': 4.384, 'min': 400.0, 'max': 4507.0}, {'current': 0.4, 'min': 400.0, 'max': 4507.0}, {'current': 3.627, 'min': 400.0, 'max': 4507.0}, {'current': 3.502, 'min': 400.0, 'max': 4507.0}, {'current': 4.001, 'min': 400.0, 'max': 4507.0}, {'current': 4.054, 'min': 400.0, 'max': 4507.0}, {'current': 4.36, 'min': 400.0, 'max': 4507.0}, {'current': 0.4, 'min': 400.0, 'max': 4507.0}, {'current': 4.36, 'min': 400.0, 'max': 4507.0}, {'current': 4.014, 'min': 400.0, 'max': 4507.0}, {'current': 3.585, 'min': 400.0, 'max': 4507.0}, {'current': 0.4, 'min': 400.0, 'max': 4507.0}], 'disk': {'/': {'total': 319.5916442871094, 'used': 119.26445007324219}}, 'gpu': 'NVIDIA GeForce RTX 3050 Ti Laptop GPU', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 3050 Ti Laptop GPU', 'memory_total': 4294967296}], 'memory': {'total': 14.969707489013672}}
+2024-06-30 01:50:04,182 INFO    HandlerThread:12353 [system_monitor.py:probe():224] Finished collecting system info
+2024-06-30 01:50:04,182 INFO    HandlerThread:12353 [system_monitor.py:probe():227] Publishing system info
+2024-06-30 01:50:04,183 INFO    HandlerThread:12353 [system_monitor.py:probe():229] Finished publishing system info
+2024-06-30 01:50:04,186 DEBUG   SenderThread:12353 [sender.py:send():378] send: files
+2024-06-30 01:50:04,186 INFO    SenderThread:12353 [sender.py:_save_file():1389] saving file wandb-metadata.json with policy now
+2024-06-30 01:50:04,392 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: python_packages
+2024-06-30 01:50:04,393 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: stop_status
+2024-06-30 01:50:04,393 DEBUG   SenderThread:12353 [sender.py:send_request():405] send_request: python_packages
+2024-06-30 01:50:04,394 DEBUG   SenderThread:12353 [sender.py:send_request():405] send_request: stop_status
+2024-06-30 01:50:04,521 INFO    wandb-upload_0:12353 [upload_job.py:push():130] Uploaded file /tmp/tmpbc7nhfuvwandb/8ntcs2k0-wandb-metadata.json
+2024-06-30 01:50:04,523 DEBUG   SenderThread:12353 [sender.py:send():378] send: telemetry
+2024-06-30 01:50:05,058 INFO    Thread-12 :12353 [dir_watcher.py:_on_file_created():271] file/dir created: /home/patrick/Documents/ML/Diffusion/Classic Diffusion/wandb/run-20240630_015003-sv30bwdx/files/requirements.txt
+2024-06-30 01:50:05,058 INFO    Thread-12 :12353 [dir_watcher.py:_on_file_created():271] file/dir created: /home/patrick/Documents/ML/Diffusion/Classic Diffusion/wandb/run-20240630_015003-sv30bwdx/files/output.log
+2024-06-30 01:50:05,058 INFO    Thread-12 :12353 [dir_watcher.py:_on_file_created():271] file/dir created: /home/patrick/Documents/ML/Diffusion/Classic Diffusion/wandb/run-20240630_015003-sv30bwdx/files/wandb-metadata.json
+2024-06-30 01:50:07,058 INFO    Thread-12 :12353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/patrick/Documents/ML/Diffusion/Classic Diffusion/wandb/run-20240630_015003-sv30bwdx/files/output.log
+2024-06-30 01:50:09,758 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: status_report
+2024-06-30 01:50:14,759 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: status_report
+2024-06-30 01:50:19,393 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: stop_status
+2024-06-30 01:50:19,393 DEBUG   SenderThread:12353 [sender.py:send_request():405] send_request: stop_status
+2024-06-30 01:50:20,493 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: status_report
+2024-06-30 01:50:25,494 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: status_report
+2024-06-30 01:50:30,495 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: status_report
+2024-06-30 01:50:34,393 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: stop_status
+2024-06-30 01:50:34,394 DEBUG   SenderThread:12353 [sender.py:send_request():405] send_request: stop_status
+2024-06-30 01:50:35,517 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: status_report
+2024-06-30 01:50:36,065 INFO    Thread-12 :12353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/patrick/Documents/ML/Diffusion/Classic Diffusion/wandb/run-20240630_015003-sv30bwdx/files/config.yaml
+2024-06-30 01:50:40,596 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: status_report
+2024-06-30 01:50:45,597 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: status_report
+2024-06-30 01:50:49,393 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: stop_status
+2024-06-30 01:50:49,394 DEBUG   SenderThread:12353 [sender.py:send_request():405] send_request: stop_status
+2024-06-30 01:50:51,503 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: status_report
+2024-06-30 01:50:56,504 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: status_report
+2024-06-30 01:51:01,504 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: status_report
+2024-06-30 01:51:04,153 DEBUG   SystemMonitor:12353 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-06-30 01:51:04,153 DEBUG   SenderThread:12353 [sender.py:send():378] send: stats
+2024-06-30 01:51:04,393 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: stop_status
+2024-06-30 01:51:04,393 DEBUG   SenderThread:12353 [sender.py:send_request():405] send_request: stop_status
+2024-06-30 01:51:07,490 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: status_report
+2024-06-30 01:51:12,490 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: status_report
+2024-06-30 01:51:17,491 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: status_report
+2024-06-30 01:51:19,393 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: stop_status
+2024-06-30 01:51:19,394 DEBUG   SenderThread:12353 [sender.py:send_request():405] send_request: stop_status
+2024-06-30 01:51:22,526 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: status_report
+2024-06-30 01:51:27,527 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: status_report
+2024-06-30 01:51:32,528 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: status_report
+2024-06-30 01:51:34,154 DEBUG   SenderThread:12353 [sender.py:send():378] send: stats
+2024-06-30 01:51:34,393 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: stop_status
+2024-06-30 01:51:34,394 DEBUG   SenderThread:12353 [sender.py:send_request():405] send_request: stop_status
+2024-06-30 01:51:35,989 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-30 01:51:35,990 DEBUG   SenderThread:12353 [sender.py:send():378] send: history
+2024-06-30 01:51:35,991 DEBUG   SenderThread:12353 [sender.py:send_request():405] send_request: summary_record
+2024-06-30 01:51:35,991 INFO    SenderThread:12353 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-06-30 01:51:36,080 INFO    Thread-12 :12353 [dir_watcher.py:_on_file_created():271] file/dir created: /home/patrick/Documents/ML/Diffusion/Classic Diffusion/wandb/run-20240630_015003-sv30bwdx/files/wandb-summary.json
+2024-06-30 01:51:37,992 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: status_report
+2024-06-30 01:51:38,081 INFO    Thread-12 :12353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/patrick/Documents/ML/Diffusion/Classic Diffusion/wandb/run-20240630_015003-sv30bwdx/files/output.log
+2024-06-30 01:51:42,993 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: status_report
+2024-06-30 01:51:44,374 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: partial_history
+2024-06-30 01:51:44,375 DEBUG   SenderThread:12353 [sender.py:send():378] send: history
+2024-06-30 01:51:44,375 DEBUG   SenderThread:12353 [sender.py:send_request():405] send_request: summary_record
+2024-06-30 01:51:44,377 INFO    SenderThread:12353 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-06-30 01:51:45,083 INFO    Thread-12 :12353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/patrick/Documents/ML/Diffusion/Classic Diffusion/wandb/run-20240630_015003-sv30bwdx/files/wandb-summary.json
+2024-06-30 01:51:45,884 DEBUG   SenderThread:12353 [sender.py:send():378] send: exit
+2024-06-30 01:51:45,884 INFO    SenderThread:12353 [sender.py:send_exit():585] handling exit code: 1
+2024-06-30 01:51:45,885 INFO    SenderThread:12353 [sender.py:send_exit():587] handling runtime: 101
+2024-06-30 01:51:45,885 INFO    SenderThread:12353 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-06-30 01:51:45,885 INFO    SenderThread:12353 [sender.py:send_exit():593] send defer
+2024-06-30 01:51:45,885 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: defer
+2024-06-30 01:51:45,885 INFO    HandlerThread:12353 [handler.py:handle_request_defer():184] handle defer: 0
+2024-06-30 01:51:45,885 DEBUG   SenderThread:12353 [sender.py:send_request():405] send_request: defer
+2024-06-30 01:51:45,885 INFO    SenderThread:12353 [sender.py:send_request_defer():609] handle sender defer: 0
+2024-06-30 01:51:45,885 INFO    SenderThread:12353 [sender.py:transition_state():613] send defer: 1
+2024-06-30 01:51:45,885 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: defer
+2024-06-30 01:51:45,886 INFO    HandlerThread:12353 [handler.py:handle_request_defer():184] handle defer: 1
+2024-06-30 01:51:45,886 DEBUG   SenderThread:12353 [sender.py:send_request():405] send_request: defer
+2024-06-30 01:51:45,886 INFO    SenderThread:12353 [sender.py:send_request_defer():609] handle sender defer: 1
+2024-06-30 01:51:45,886 INFO    SenderThread:12353 [sender.py:transition_state():613] send defer: 2
+2024-06-30 01:51:45,886 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: defer
+2024-06-30 01:51:45,886 INFO    HandlerThread:12353 [handler.py:handle_request_defer():184] handle defer: 2
+2024-06-30 01:51:45,886 INFO    HandlerThread:12353 [system_monitor.py:finish():203] Stopping system monitor
+2024-06-30 01:51:45,886 INFO    HandlerThread:12353 [interfaces.py:finish():200] Joined cpu monitor
+2024-06-30 01:51:45,886 INFO    HandlerThread:12353 [interfaces.py:finish():200] Joined disk monitor
+2024-06-30 01:51:45,886 DEBUG   SystemMonitor:12353 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-06-30 01:51:45,886 DEBUG   SystemMonitor:12353 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-06-30 01:51:45,963 INFO    HandlerThread:12353 [interfaces.py:finish():200] Joined gpu monitor
+2024-06-30 01:51:45,964 INFO    HandlerThread:12353 [interfaces.py:finish():200] Joined memory monitor
+2024-06-30 01:51:45,964 INFO    HandlerThread:12353 [interfaces.py:finish():200] Joined network monitor
+2024-06-30 01:51:45,964 DEBUG   SenderThread:12353 [sender.py:send_request():405] send_request: defer
+2024-06-30 01:51:45,964 INFO    SenderThread:12353 [sender.py:send_request_defer():609] handle sender defer: 2
+2024-06-30 01:51:45,964 INFO    SenderThread:12353 [sender.py:transition_state():613] send defer: 3
+2024-06-30 01:51:45,965 DEBUG   SenderThread:12353 [sender.py:send():378] send: stats
+2024-06-30 01:51:45,965 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: defer
+2024-06-30 01:51:45,965 INFO    HandlerThread:12353 [handler.py:handle_request_defer():184] handle defer: 3
+2024-06-30 01:51:45,965 DEBUG   SenderThread:12353 [sender.py:send_request():405] send_request: defer
+2024-06-30 01:51:45,965 INFO    SenderThread:12353 [sender.py:send_request_defer():609] handle sender defer: 3
+2024-06-30 01:51:45,966 INFO    SenderThread:12353 [sender.py:transition_state():613] send defer: 4
+2024-06-30 01:51:45,966 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: defer
+2024-06-30 01:51:45,966 INFO    HandlerThread:12353 [handler.py:handle_request_defer():184] handle defer: 4
+2024-06-30 01:51:45,966 DEBUG   SenderThread:12353 [sender.py:send_request():405] send_request: defer
+2024-06-30 01:51:45,966 INFO    SenderThread:12353 [sender.py:send_request_defer():609] handle sender defer: 4
+2024-06-30 01:51:45,966 INFO    SenderThread:12353 [sender.py:transition_state():613] send defer: 5
+2024-06-30 01:51:45,966 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: defer
+2024-06-30 01:51:45,966 INFO    HandlerThread:12353 [handler.py:handle_request_defer():184] handle defer: 5
+2024-06-30 01:51:45,967 DEBUG   SenderThread:12353 [sender.py:send():378] send: summary
+2024-06-30 01:51:45,967 INFO    SenderThread:12353 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-06-30 01:51:45,967 DEBUG   SenderThread:12353 [sender.py:send_request():405] send_request: defer
+2024-06-30 01:51:45,967 INFO    SenderThread:12353 [sender.py:send_request_defer():609] handle sender defer: 5
+2024-06-30 01:51:45,967 INFO    SenderThread:12353 [sender.py:transition_state():613] send defer: 6
+2024-06-30 01:51:45,968 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: defer
+2024-06-30 01:51:45,968 INFO    HandlerThread:12353 [handler.py:handle_request_defer():184] handle defer: 6
+2024-06-30 01:51:45,968 DEBUG   SenderThread:12353 [sender.py:send_request():405] send_request: defer
+2024-06-30 01:51:45,968 INFO    SenderThread:12353 [sender.py:send_request_defer():609] handle sender defer: 6
+2024-06-30 01:51:45,968 INFO    SenderThread:12353 [sender.py:transition_state():613] send defer: 7
+2024-06-30 01:51:45,968 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: status_report
+2024-06-30 01:51:45,968 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: defer
+2024-06-30 01:51:45,968 INFO    HandlerThread:12353 [handler.py:handle_request_defer():184] handle defer: 7
+2024-06-30 01:51:45,968 DEBUG   SenderThread:12353 [sender.py:send_request():405] send_request: defer
+2024-06-30 01:51:45,969 INFO    SenderThread:12353 [sender.py:send_request_defer():609] handle sender defer: 7
+2024-06-30 01:51:46,084 INFO    Thread-12 :12353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/patrick/Documents/ML/Diffusion/Classic Diffusion/wandb/run-20240630_015003-sv30bwdx/files/wandb-summary.json
+2024-06-30 01:51:46,084 INFO    Thread-12 :12353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/patrick/Documents/ML/Diffusion/Classic Diffusion/wandb/run-20240630_015003-sv30bwdx/files/output.log
+2024-06-30 01:51:46,882 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: poll_exit
+2024-06-30 01:51:47,085 INFO    Thread-12 :12353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/patrick/Documents/ML/Diffusion/Classic Diffusion/wandb/run-20240630_015003-sv30bwdx/files/output.log
+2024-06-30 01:51:48,002 INFO    SenderThread:12353 [sender.py:transition_state():613] send defer: 8
+2024-06-30 01:51:48,002 DEBUG   SenderThread:12353 [sender.py:send_request():405] send_request: poll_exit
+2024-06-30 01:51:48,003 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: defer
+2024-06-30 01:51:48,003 INFO    HandlerThread:12353 [handler.py:handle_request_defer():184] handle defer: 8
+2024-06-30 01:51:48,003 DEBUG   SenderThread:12353 [sender.py:send_request():405] send_request: defer
+2024-06-30 01:51:48,003 INFO    SenderThread:12353 [sender.py:send_request_defer():609] handle sender defer: 8
+2024-06-30 01:51:48,003 INFO    SenderThread:12353 [job_builder.py:build():432] Attempting to build job artifact
+2024-06-30 01:51:48,004 INFO    SenderThread:12353 [job_builder.py:_get_source_type():565] is repo sourced job
+2024-06-30 01:51:48,025 INFO    SenderThread:12353 [job_builder.py:build():541] adding wandb-job metadata file
+2024-06-30 01:51:48,036 INFO    SenderThread:12353 [sender.py:transition_state():613] send defer: 9
+2024-06-30 01:51:48,036 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: defer
+2024-06-30 01:51:48,036 INFO    HandlerThread:12353 [handler.py:handle_request_defer():184] handle defer: 9
+2024-06-30 01:51:48,036 DEBUG   SenderThread:12353 [sender.py:send():378] send: artifact
+2024-06-30 01:51:48,085 INFO    Thread-12 :12353 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/patrick/Documents/ML/Diffusion/Classic Diffusion/wandb/run-20240630_015003-sv30bwdx/files/output.log
+2024-06-30 01:51:48,322 INFO    SenderThread:12353 [sender.py:send_artifact():1467] sent artifact job-https___github.com_aLadNamedPat_Diffusion.git_Classic_Diffusion_train.py - {'id': 'QXJ0aWZhY3Q6OTMzOTA4NTEw', 'state': 'COMMITTED', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjIzNzM0NTE2Mw==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6OTMzOTEwNjk1', 'versionIndex': 1}}}
+2024-06-30 01:51:48,322 DEBUG   SenderThread:12353 [sender.py:send_request():405] send_request: defer
+2024-06-30 01:51:48,322 INFO    SenderThread:12353 [sender.py:send_request_defer():609] handle sender defer: 9
+2024-06-30 01:51:48,322 INFO    SenderThread:12353 [dir_watcher.py:finish():358] shutting down directory watcher
+2024-06-30 01:51:48,883 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: poll_exit
+2024-06-30 01:51:49,086 INFO    SenderThread:12353 [dir_watcher.py:finish():388] scan: /home/patrick/Documents/ML/Diffusion/Classic Diffusion/wandb/run-20240630_015003-sv30bwdx/files
+2024-06-30 01:51:49,087 INFO    SenderThread:12353 [dir_watcher.py:finish():402] scan save: /home/patrick/Documents/ML/Diffusion/Classic Diffusion/wandb/run-20240630_015003-sv30bwdx/files/output.log output.log
+2024-06-30 01:51:49,087 INFO    SenderThread:12353 [dir_watcher.py:finish():402] scan save: /home/patrick/Documents/ML/Diffusion/Classic Diffusion/wandb/run-20240630_015003-sv30bwdx/files/config.yaml config.yaml
+2024-06-30 01:51:49,088 INFO    SenderThread:12353 [dir_watcher.py:finish():402] scan save: /home/patrick/Documents/ML/Diffusion/Classic Diffusion/wandb/run-20240630_015003-sv30bwdx/files/wandb-metadata.json wandb-metadata.json
+2024-06-30 01:51:49,090 INFO    SenderThread:12353 [dir_watcher.py:finish():402] scan save: /home/patrick/Documents/ML/Diffusion/Classic Diffusion/wandb/run-20240630_015003-sv30bwdx/files/requirements.txt requirements.txt
+2024-06-30 01:51:49,090 INFO    SenderThread:12353 [dir_watcher.py:finish():402] scan save: /home/patrick/Documents/ML/Diffusion/Classic Diffusion/wandb/run-20240630_015003-sv30bwdx/files/wandb-summary.json wandb-summary.json
+2024-06-30 01:51:49,090 INFO    SenderThread:12353 [sender.py:transition_state():613] send defer: 10
+2024-06-30 01:51:49,090 DEBUG   SenderThread:12353 [sender.py:send_request():405] send_request: poll_exit
+2024-06-30 01:51:49,090 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: defer
+2024-06-30 01:51:49,090 INFO    HandlerThread:12353 [handler.py:handle_request_defer():184] handle defer: 10
+2024-06-30 01:51:49,091 DEBUG   SenderThread:12353 [sender.py:send_request():405] send_request: defer
+2024-06-30 01:51:49,091 INFO    SenderThread:12353 [sender.py:send_request_defer():609] handle sender defer: 10
+2024-06-30 01:51:49,091 INFO    SenderThread:12353 [file_pusher.py:finish():169] shutting down file pusher
+2024-06-30 01:51:49,401 INFO    wandb-upload_0:12353 [upload_job.py:push():130] Uploaded file /home/patrick/Documents/ML/Diffusion/Classic Diffusion/wandb/run-20240630_015003-sv30bwdx/files/output.log
+2024-06-30 01:51:49,528 INFO    wandb-upload_2:12353 [upload_job.py:push():130] Uploaded file /home/patrick/Documents/ML/Diffusion/Classic Diffusion/wandb/run-20240630_015003-sv30bwdx/files/requirements.txt
+2024-06-30 01:51:49,545 INFO    wandb-upload_1:12353 [upload_job.py:push():130] Uploaded file /home/patrick/Documents/ML/Diffusion/Classic Diffusion/wandb/run-20240630_015003-sv30bwdx/files/config.yaml
+2024-06-30 01:51:49,549 INFO    wandb-upload_3:12353 [upload_job.py:push():130] Uploaded file /home/patrick/Documents/ML/Diffusion/Classic Diffusion/wandb/run-20240630_015003-sv30bwdx/files/wandb-summary.json
+2024-06-30 01:51:49,749 INFO    Thread-11 (_thread_body):12353 [sender.py:transition_state():613] send defer: 11
+2024-06-30 01:51:49,750 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: defer
+2024-06-30 01:51:49,750 INFO    HandlerThread:12353 [handler.py:handle_request_defer():184] handle defer: 11
+2024-06-30 01:51:49,750 DEBUG   SenderThread:12353 [sender.py:send_request():405] send_request: defer
+2024-06-30 01:51:49,750 INFO    SenderThread:12353 [sender.py:send_request_defer():609] handle sender defer: 11
+2024-06-30 01:51:49,751 INFO    SenderThread:12353 [file_pusher.py:join():175] waiting for file pusher
+2024-06-30 01:51:49,751 INFO    SenderThread:12353 [sender.py:transition_state():613] send defer: 12
+2024-06-30 01:51:49,751 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: defer
+2024-06-30 01:51:49,751 INFO    HandlerThread:12353 [handler.py:handle_request_defer():184] handle defer: 12
+2024-06-30 01:51:49,751 DEBUG   SenderThread:12353 [sender.py:send_request():405] send_request: defer
+2024-06-30 01:51:49,751 INFO    SenderThread:12353 [sender.py:send_request_defer():609] handle sender defer: 12
+2024-06-30 01:51:49,751 INFO    SenderThread:12353 [file_stream.py:finish():601] file stream finish called
+2024-06-30 01:51:49,884 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: poll_exit
+2024-06-30 01:51:49,946 INFO    SenderThread:12353 [file_stream.py:finish():605] file stream finish is done
+2024-06-30 01:51:49,947 INFO    SenderThread:12353 [sender.py:transition_state():613] send defer: 13
+2024-06-30 01:51:49,947 DEBUG   SenderThread:12353 [sender.py:send_request():405] send_request: poll_exit
+2024-06-30 01:51:49,947 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: defer
+2024-06-30 01:51:49,947 INFO    HandlerThread:12353 [handler.py:handle_request_defer():184] handle defer: 13
+2024-06-30 01:51:49,948 DEBUG   SenderThread:12353 [sender.py:send_request():405] send_request: defer
+2024-06-30 01:51:49,948 INFO    SenderThread:12353 [sender.py:send_request_defer():609] handle sender defer: 13
+2024-06-30 01:51:49,948 INFO    SenderThread:12353 [sender.py:transition_state():613] send defer: 14
+2024-06-30 01:51:49,949 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: defer
+2024-06-30 01:51:49,949 INFO    HandlerThread:12353 [handler.py:handle_request_defer():184] handle defer: 14
+2024-06-30 01:51:49,950 DEBUG   SenderThread:12353 [sender.py:send():378] send: final
+2024-06-30 01:51:49,950 DEBUG   SenderThread:12353 [sender.py:send():378] send: footer
+2024-06-30 01:51:49,950 DEBUG   SenderThread:12353 [sender.py:send_request():405] send_request: defer
+2024-06-30 01:51:49,950 INFO    SenderThread:12353 [sender.py:send_request_defer():609] handle sender defer: 14
+2024-06-30 01:51:49,951 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: poll_exit
+2024-06-30 01:51:49,951 DEBUG   SenderThread:12353 [sender.py:send_request():405] send_request: poll_exit
+2024-06-30 01:51:49,952 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: poll_exit
+2024-06-30 01:51:49,952 DEBUG   SenderThread:12353 [sender.py:send_request():405] send_request: poll_exit
+2024-06-30 01:51:49,953 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: server_info
+2024-06-30 01:51:49,953 DEBUG   SenderThread:12353 [sender.py:send_request():405] send_request: server_info
+2024-06-30 01:51:49,955 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: get_summary
+2024-06-30 01:51:49,956 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: sampled_history
+2024-06-30 01:51:49,956 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: internal_messages
+2024-06-30 01:51:49,998 INFO    MainThread:12353 [wandb_run.py:_footer_history_summary_info():3994] rendering history
+2024-06-30 01:51:49,999 INFO    MainThread:12353 [wandb_run.py:_footer_history_summary_info():4026] rendering summary
+2024-06-30 01:51:49,999 INFO    MainThread:12353 [wandb_run.py:_footer_sync_info():3953] logging synced files
+2024-06-30 01:51:49,999 DEBUG   HandlerThread:12353 [handler.py:handle_request():158] handle_request: shutdown
+2024-06-30 01:51:49,999 INFO    HandlerThread:12353 [handler.py:finish():882] shutting down handler
+2024-06-30 01:51:50,953 INFO    WriterThread:12353 [datastore.py:close():296] close: /home/patrick/Documents/ML/Diffusion/Classic Diffusion/wandb/run-20240630_015003-sv30bwdx/run-sv30bwdx.wandb
+2024-06-30 01:51:50,998 INFO    SenderThread:12353 [sender.py:finish():1545] shutting down sender
+2024-06-30 01:51:50,998 INFO    SenderThread:12353 [file_pusher.py:finish():169] shutting down file pusher
+2024-06-30 01:51:50,999 INFO    SenderThread:12353 [file_pusher.py:join():175] waiting for file pusher

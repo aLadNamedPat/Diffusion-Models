@@ -1,0 +1,116 @@
+/home/patrick/Documents/ML/Diffusion/Classic Diffusion/Embedding.py:28: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  t = torch.tensor(t, dtype=torch.float32).to(device)
+Epoch 1/100, Train Loss: 0.0324303784018972
+Epoch 1/100, Test Loss: 0.028218021625394208
+149
+148
+147
+146
+145
+144
+143
+142
+141
+140
+139
+138
+137
+136
+135
+134
+133
+132
+131
+130
+129
+128
+127
+126
+125
+124
+123
+122
+121
+120
+119
+118
+117
+116
+115
+114
+Traceback (most recent call last):
+  File "/home/patrick/Documents/ML/Diffusion/Classic Diffusion/train.py", line 176, in <module>
+    random_noise = diffusion.sample(random_noise, Network)
+  File "/home/patrick/Documents/ML/Diffusion/Classic Diffusion/Diffusion_Scheduler.py", line 48, in sample
+    denoised_image = 1 / self.alpha[i] * (noisy_image  - (1 - self.alpha[i]) / (torch.sqrt(1 - self.cumulAlpha[i]) * model(noisy_image, torch.tensor([i]).to(device))))
+  File "/home/patrick/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/patrick/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/patrick/Documents/ML/Diffusion/Classic Diffusion/model.py", line 200, in forward
+    a = self.decode(z, skip_connections, a)
+  File "/home/patrick/Documents/ML/Diffusion/Classic Diffusion/model.py", line 186, in decode
+    input = layer(input, time)
+  File "/home/patrick/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/patrick/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/patrick/Documents/ML/Diffusion/Classic Diffusion/model.py", line 16, in forward
+    input = module(input, *args, **kwargs)
+  File "/home/patrick/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/patrick/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/patrick/Documents/ML/Diffusion/Classic Diffusion/Residual.py", line 65, in forward
+    time_embed = self.time_embedding(time_embed)
+  File "/home/patrick/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/patrick/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/patrick/.local/lib/python3.10/site-packages/torch/nn/modules/container.py", line 217, in forward
+    input = module(input)
+  File "/home/patrick/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/patrick/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/patrick/.local/lib/python3.10/site-packages/torch/nn/modules/linear.py", line 116, in forward
+    return F.linear(input, self.weight, self.bias)
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 3.72 GiB of which 6.00 MiB is free. Process 5344 has 39.16 MiB memory in use. Including non-PyTorch memory, this process has 3.62 GiB memory in use. Of the allocated memory 3.47 GiB is allocated by PyTorch, and 16.53 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Traceback (most recent call last):
+  File "/home/patrick/Documents/ML/Diffusion/Classic Diffusion/train.py", line 176, in <module>
+    random_noise = diffusion.sample(random_noise, Network)
+  File "/home/patrick/Documents/ML/Diffusion/Classic Diffusion/Diffusion_Scheduler.py", line 48, in sample
+    denoised_image = 1 / self.alpha[i] * (noisy_image  - (1 - self.alpha[i]) / (torch.sqrt(1 - self.cumulAlpha[i]) * model(noisy_image, torch.tensor([i]).to(device))))
+  File "/home/patrick/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/patrick/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/patrick/Documents/ML/Diffusion/Classic Diffusion/model.py", line 200, in forward
+    a = self.decode(z, skip_connections, a)
+  File "/home/patrick/Documents/ML/Diffusion/Classic Diffusion/model.py", line 186, in decode
+    input = layer(input, time)
+  File "/home/patrick/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/patrick/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/patrick/Documents/ML/Diffusion/Classic Diffusion/model.py", line 16, in forward
+    input = module(input, *args, **kwargs)
+  File "/home/patrick/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/patrick/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/patrick/Documents/ML/Diffusion/Classic Diffusion/Residual.py", line 65, in forward
+    time_embed = self.time_embedding(time_embed)
+  File "/home/patrick/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/patrick/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/patrick/.local/lib/python3.10/site-packages/torch/nn/modules/container.py", line 217, in forward
+    input = module(input)
+  File "/home/patrick/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1511, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/patrick/.local/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1520, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/patrick/.local/lib/python3.10/site-packages/torch/nn/modules/linear.py", line 116, in forward
+    return F.linear(input, self.weight, self.bias)
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.00 MiB. GPU 0 has a total capacity of 3.72 GiB of which 6.00 MiB is free. Process 5344 has 39.16 MiB memory in use. Including non-PyTorch memory, this process has 3.62 GiB memory in use. Of the allocated memory 3.47 GiB is allocated by PyTorch, and 16.53 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)

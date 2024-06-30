@@ -1,0 +1,52 @@
+wandb_version: 1
+
+learning_rate:
+  desc: null
+  value: 0.0005
+architecture:
+  desc: null
+  value: UNET
+dataset:
+  desc: null
+  value: Landscape-Color
+batch_size:
+  desc: null
+  value: 32
+latent_dims:
+  desc: null
+  value: 512
+epochs:
+  desc: null
+  value: 100
+_wandb:
+  desc: null
+  value:
+    python_version: 3.10.12
+    cli_version: 0.17.0
+    framework: huggingface
+    huggingface_version: 4.39.1
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1719726603
+    t:
+      1:
+      - 1
+      - 11
+      - 41
+      - 49
+      - 55
+      2:
+      - 1
+      - 11
+      - 41
+      - 49
+      - 55
+      3:
+      - 16
+      - 23
+      4: 3.10.12
+      5: 0.17.0
+      6: 4.39.1
+      8:
+      - 5
+      13: linux-x86_64

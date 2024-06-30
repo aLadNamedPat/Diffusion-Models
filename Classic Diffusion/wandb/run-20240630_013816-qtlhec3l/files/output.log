@@ -1,0 +1,16 @@
+/home/patrick/Documents/ML/Diffusion/Classic Diffusion/Embedding.py:28: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  t = torch.tensor(t, dtype=torch.float32).to(device)
+Epoch 1/100, Train Loss: 0.06797880945758447
+Traceback (most recent call last):
+  File "/home/patrick/Documents/ML/Diffusion/Classic Diffusion/train.py", line 176, in <module>
+    random_noise = diffusion.sample(random_noise, Network)
+  File "/home/patrick/Documents/ML/Diffusion/Classic Diffusion/Diffusion_Scheduler.py", line 46, in sample
+    z = torch.rand_like(noisy_image.shape)
+TypeError: rand_like(): argument 'input' (position 1) must be Tensor, not torch.Size
+Traceback (most recent call last):
+  File "/home/patrick/Documents/ML/Diffusion/Classic Diffusion/train.py", line 176, in <module>
+    random_noise = diffusion.sample(random_noise, Network)
+  File "/home/patrick/Documents/ML/Diffusion/Classic Diffusion/Diffusion_Scheduler.py", line 46, in sample
+    z = torch.rand_like(noisy_image.shape)
+TypeError: rand_like(): argument 'input' (position 1) must be Tensor, not torch.Size
+Epoch 1/100, Test Loss: 0.06077163840333621

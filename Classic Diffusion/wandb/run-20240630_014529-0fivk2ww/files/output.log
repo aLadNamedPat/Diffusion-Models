@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/home/patrick/Documents/ML/Diffusion/Classic Diffusion/train.py", line 134, in <module>
+    noise, new_image = diffusion.add_noise(rand_steps, images)
+  File "/home/patrick/Documents/ML/Diffusion/Classic Diffusion/Diffusion_Scheduler.py", line 29, in add_noise
+    cumulAlphaSqrt = torch.sqrt(self.cumulAlpha[step]).view(-1, 1, 1, 1)
+RuntimeError: CUDA error: device-side assert triggered
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+Traceback (most recent call last):
+  File "/home/patrick/Documents/ML/Diffusion/Classic Diffusion/train.py", line 134, in <module>
+    noise, new_image = diffusion.add_noise(rand_steps, images)
+  File "/home/patrick/Documents/ML/Diffusion/Classic Diffusion/Diffusion_Scheduler.py", line 29, in add_noise
+    cumulAlphaSqrt = torch.sqrt(self.cumulAlpha[step]).view(-1, 1, 1, 1)
+RuntimeError: CUDA error: device-side assert triggered
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.

@@ -5,12 +5,26 @@ import os
 import wandb
 from Diffusion_Scheduler import Diffusion_Scheduler
 from model import UNet
-
 from PIL import Image
 import matplotlib.pyplot as plt
 import torchvision.transforms as T
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
+wandb.init(
+    # set the wandb project where this run will be logged
+    project="my-awesome-project",
+
+    # track hyperparameters and run metadata
+    config={
+    "learning_rate": 0.0005,
+    "architecture": "UNET",
+    "dataset": "Landscape-Color",
+    "batch_size" : 32,
+    "latent_dims" : 512,
+    "epochs": 100,
+    }
+)
 
 def tensor_to_image(tensor):
     tensor = tensor.squeeze(0)
@@ -81,25 +95,25 @@ train_size = int(0.8 * len(dataset))
 test_size = len(dataset) - train_size
 train_dataset, test_dataset = random_split(dataset, [train_size, test_size])
 
-batch_size = 32
+batch_size = 16
 
 train_dataloader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
 test_dataloader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
 
 input_channels = 3
 output_channels = 3
-time_embedding_dims = 50
+time_embedding_dims = 100
 hidden_dims = [64, 64, 128, 256, 256]
 
 Network = UNet(input_channels, output_channels, hidden_dims, time_embedding_dims).to(device)
 
 v_begin = 1e-4
 v_end = 0.02
-steps = 1000
+steps = 100
 
 diffusion = Diffusion_Scheduler(v_begin, v_end, steps)
 # Define optimizer
-optimizer = torch.optim.Adam(Network.parameters(), lr= 0.0005)
+optimizer = torch.optim.Adam(Network.parameters(), lr= 5e-4)
 
 # Training loop
 epochs = 100
@@ -112,7 +126,7 @@ for epoch in range(epochs):
         images = images.to(device)
 
         batch_size, num_channels, w, h = images.shape
-        rand_steps = torch.randint(1, 1000, (batch_size,)).to(device)
+        rand_steps = torch.randint(1, 100, (batch_size,)).to(device)
 
 
         optimizer.zero_grad()
@@ -130,8 +144,9 @@ for epoch in range(epochs):
         optimizer.step()
 
         train_loss += loss.item()
-
-    print(f'Epoch {epoch+1}/{epochs}, Train Loss: {train_loss/len(train_dataloader)}')
+    train_loss_avg = train_loss / len(train_dataloader)
+    wandb.log({"Train Loss": train_loss_avg})
+    print(f'Epoch {epoch+1}/{epochs}, Train Loss: {train_loss_avg}')
 
     # Validation loop
     Network.eval()
@@ -141,18 +156,30 @@ for epoch in range(epochs):
             images = images.to(device)
             batch_size, num_channels, w, h = images.shape
 
-            rand_steps = torch.randint(1, 1000, (batch_size,)).to(device)
+            rand_steps = torch.randint(1, 100, (batch_size,)).to(device)
             noise, new_image = diffusion.add_noise(rand_steps, images)
 
             reconstructed = Network(images, rand_steps)
 
             loss = Network.find_loss(reconstructed, noise)
             test_loss += loss.item()
+    test_loss_avg = test_loss / len(test_dataloader)
+    wandb.log({"Test Loss": test_loss_avg})
     print(f'Epoch {epoch+1}/{epochs}, Test Loss: {test_loss/len(test_dataloader)}')
+
+
+    if epoch % 10 == 0:  # Log images every 10 epochs
+        random_noise = torch.randn((1, input_channels, 128, 128)).to(device)
+        images_list = [random_noise]
+
+        for step in reversed(range(diffusion.steps)):
+            random_noise = diffusion.sample(random_noise, Network)
+            images_list.append(random_noise.cpu())
+
+        images_list = [tensor_to_image(img) for img in images_list]
+        wandb.log({"Denoising Steps": [wandb.Image(img, caption=f"Step {i}") for i, img in enumerate(images_list)]})
 
 # Save the model
 model_path = os.path.join(project_dir, 'UNET_Model2.pth')
 torch.save(Network.state_dict(), model_path)
 print(f'Model saved to {model_path}')
-
-

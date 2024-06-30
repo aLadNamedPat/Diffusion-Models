@@ -1,0 +1,128 @@
+{
+    "os": "Linux-6.5.0-41-generic-x86_64-with-glibc2.35",
+    "python": "3.10.12",
+    "heartbeatAt": "2024-06-30T05:45:30.511917",
+    "startedAt": "2024-06-30T05:45:29.746465",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/home/patrick/Documents/ML/Diffusion/Classic Diffusion/train.py",
+    "codePathLocal": "train.py",
+    "codePath": "Classic Diffusion/train.py",
+    "git": {
+        "remote": "https://github.com/aLadNamedPat/Diffusion.git",
+        "commit": "2f3de759189780b85a865ddd7b4222beccb0a419"
+    },
+    "email": "Pattheboy135@gmail.com",
+    "root": "/home/patrick/Documents/ML/Diffusion",
+    "host": "patrick-Swift-SFX14-41G",
+    "username": "patrick",
+    "executable": "/usr/bin/python3",
+    "cpu_count": 8,
+    "cpu_count_logical": 16,
+    "cpu_freq": {
+        "current": 2.4171875,
+        "min": 400.0,
+        "max": 4507.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 3.642,
+            "min": 400.0,
+            "max": 4507.0
+        },
+        {
+            "current": 0.4,
+            "min": 400.0,
+            "max": 4507.0
+        },
+        {
+            "current": 4.245,
+            "min": 400.0,
+            "max": 4507.0
+        },
+        {
+            "current": 0.4,
+            "min": 400.0,
+            "max": 4507.0
+        },
+        {
+            "current": 3.561,
+            "min": 400.0,
+            "max": 4507.0
+        },
+        {
+            "current": 4.409,
+            "min": 400.0,
+            "max": 4507.0
+        },
+        {
+            "current": 4.415,
+            "min": 400.0,
+            "max": 4507.0
+        },
+        {
+            "current": 4.416,
+            "min": 400.0,
+            "max": 4507.0
+        },
+        {
+            "current": 3.529,
+            "min": 400.0,
+            "max": 4507.0
+        },
+        {
+            "current": 0.4,
+            "min": 400.0,
+            "max": 4507.0
+        },
+        {
+            "current": 3.527,
+            "min": 400.0,
+            "max": 4507.0
+        },
+        {
+            "current": 3.995,
+            "min": 400.0,
+            "max": 4507.0
+        },
+        {
+            "current": 4.416,
+            "min": 400.0,
+            "max": 4507.0
+        },
+        {
+            "current": 0.4,
+            "min": 400.0,
+            "max": 4507.0
+        },
+        {
+            "current": 4.095,
+            "min": 400.0,
+            "max": 4507.0
+        },
+        {
+            "current": 0.4,
+            "min": 400.0,
+            "max": 4507.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 319.5916442871094,
+            "used": 119.25973129272461
+        }
+    },
+    "gpu": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 3050 Ti Laptop GPU",
+            "memory_total": 4294967296
+        }
+    ],
+    "memory": {
+        "total": 14.969707489013672
+    }
+}

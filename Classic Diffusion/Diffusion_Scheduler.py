@@ -43,8 +43,11 @@ class Diffusion_Scheduler():
     ) -> torch.tensor:
         
         for i in reversed(range(self.steps)):
-            z = torch.normal(0, torch.ones(noisy_image.shape))
-            denoised_image = 1 / self.alpha[i] * (noisy_image  - (1 - self.alpha[i]) / (torch.sqrt(1 - self.cumulAlpha[i]) * model(noisy_image, i)))
-            if i == 1:
+            print(i)
+            z = torch.rand_like(noisy_image)
+            denoised_image = 1 / self.alpha[i] * (noisy_image  - (1 - self.alpha[i]) / (torch.sqrt(1 - self.cumulAlpha[i]) * model(noisy_image, torch.tensor([i]).to(device))))
+            if i == 0:
                 return denoised_image
-            denoised_image += self.schedule(i) * z
+            noisy_image = denoised_image + torch.sqrt(self.schedule[i]) * z
+
+        return denoised_image
