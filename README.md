@@ -8,6 +8,9 @@ Diffusion-based models operate slightly differently from our VAE model.
 The model is no longer attempting to learn how to generate images from a latent space. Instead, the learning process is simplified
 by the model learning the random mixing to unmix photos and generate new ones from random samples.
 
+I wasn't able to recreate the reverse diffusion process from purely the original paper. I'm not exactly sure why, but I believe it is something wrong
+with my implementation. However, I was able to find some results with the reverse diffusion process of this [paper](https://arxiv.org/pdf/2010.02502).
+
 ## How does this work?
 
 ### Training
