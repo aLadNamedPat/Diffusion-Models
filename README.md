@@ -55,8 +55,20 @@ This leads me to believe that I did not use enough number of steps in the diffus
 
 I trained my diffusion model for 100 epochs again this time with 1000 timesteps. The following results were obtained by stopping gaussian noise after 300 inference steps (this makes the image generation significantly less blurry).
 
-![gif_0](results/denoised_images_0.gif) ![gif_1](results/denoised_images_1.gif) ![gif_2](results/denoised_images_2.gif) ![gif_3](results/denoised_images_3.gif) ![gif_4](results/denoised_images_4.gif)
+<div style="display: flex; justify-content: space-around; align-items: center;">
+    <img src="results/denoised_images_0.gif" alt="Denoised Image 0" style="width: 18%; height: auto;">
+    <img src="results/denoised_images_1.gif" alt="Denoised Image 1" style="width: 18%; height: auto;">
+    <img src="results/denoised_images_2.gif" alt="Denoised Image 2" style="width: 18%; height: auto;">
+    <img src="results/denoised_images_3.gif" alt="Denoised Image 3" style="width: 18%; height: auto;">
+    <img src="results/denoised_images_4.gif" alt="Denoised Image 4" style="width: 18%; height: auto;">
+</div>
 
 This is the result obtained by stopping gaussian noise after 900 inference steps:
 
-![gif_0](results/g0.gif) ![gif_1](results/g1.gif) ![gif_2](results/g2.gif) ![gif_3](results/g3.gif) ![gif_4](results/g4.gif)
+<div style="display: flex; justify-content: space-around; align-items: center;">
+    <img src="results/g0.gif" alt="Denoised Image 0" style="width: 18%; height: auto;">
+    <img src="results/g1.gif" alt="Denoised Image 1" style="width: 18%; height: auto;">
+    <img src="results/g2.gif" alt="Denoised Image 2" style="width: 18%; height: auto;">
+    <img src="results/g3.gif" alt="Denoised Image 3" style="width: 18%; height: auto;">
+    <img src="results/g4.gif" alt="Denoised Image 4" style="width: 18%; height: auto;">
+</div>
