@@ -129,7 +129,7 @@ for epoch in range(epochs):
         images = images.to(device)
 
         batch_size, num_channels, w, h = images.shape
-        rand_steps = torch.randint(1, 512, (batch_size,)).to(device)
+        rand_steps = torch.randint(0, 1000, (batch_size,)).to(device)
 
 
         optimizer.zero_grad()
@@ -164,7 +164,7 @@ for epoch in range(epochs):
             images = images.to(device)
             batch_size, num_channels, w, h = images.shape
 
-            rand_steps = torch.randint(1, 512, (batch_size,)).to(device)
+            rand_steps = torch.randint(0, 1000, (batch_size,)).to(device)
             noise, new_image = diffusion.add_noise(rand_steps, images)
 
             predicted_noise = Network(new_image, rand_steps)

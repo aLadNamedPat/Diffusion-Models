@@ -50,3 +50,13 @@ Experimenting with the number of steps that noise is added seems to help the inf
 ![Results_Modified_Two](results/Figure_3.png)
 
 This leads me to believe that I did not use enough number of steps in the diffusion process. 512 is probably too little for the model to completely diffuse the model by itself. My guess is a higher amount like 1000 would provide better results.
+
+### Further results
+
+I trained my diffusion model for 100 epochs again this time with 1000 timesteps. The following results were obtained by stopping gaussian noise after 300 inference steps (this makes the image generation significantly less blurry).
+
+![gif_0](results/denoised_images_0.gif) ![gif_1](results/denoised_images_1.gif) ![gif_2](results/denoised_images_2.gif) ![gif_3](results/denoised_images_3.gif) ![gif_4](results/denoised_images_4.gif)
+
+This is the result obtained by stopping gaussian noise after 900 inference steps:
+
+![gif_0](results/g0.gif) ![gif_1](results/g1.gif) ![gif_2](results/g2.gif) ![gif_3](results/g3.gif) ![gif_4](results/g4.gif)

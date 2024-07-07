@@ -2,8 +2,16 @@ import torch
 import math
 import numpy as np
 from tqdm import tqdm
+import torchvision.transforms as T
+from PIL import Image
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
+def tensor_to_image(tensor):
+    tensor = tensor.squeeze(0)
+    tensor = tensor * 0.5 + 0.5
+    tensor = tensor.clamp(0, 1)
+    return T.ToPILImage()(tensor)
 
 class Diffusion_Scheduler():
     # Initialize the diffusion process
@@ -161,7 +169,7 @@ class Diffusion_Scheduler():
             self.set_timesteps(num_inference_steps)
             last_step = False
             for t in tqdm(self.timesteps):
-                if (t <= 325):
+                if (t <= 900):
                     # print(True)
                     last_step = True
                 model_output = model(image, torch.tensor([t]).to(device))
@@ -181,3 +189,28 @@ class Diffusion_Scheduler():
                 self.steps //  timesteps,
             )[::-1]
         )
+
+    def gifGenerator(
+        self,
+        model,
+        input_channels : int = 1,
+        num_inference_steps : int = 100,
+        num_steps_to_save : int = 50,
+    ):
+        images = []
+        with torch.no_grad():
+            image = torch.randn((1, input_channels, 32, 32)).to(device)
+            self.set_timesteps(num_inference_steps)
+            last_step = False
+            for t in tqdm(self.timesteps):
+                if (t <= 900):
+                    # print(True)
+                    last_step = True
+                model_output = model(image, torch.tensor([t]).to(device))
+                # predict previous mean of image x_t-1 and add variance depending on eta
+                # do x_t -> x_t-1
+                image = self.take_step(model_output, t, image, last_step)
+
+                if t % num_steps_to_save == 0:
+                    images.append(tensor_to_image(image))
+        return images

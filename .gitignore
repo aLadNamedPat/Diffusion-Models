@@ -1,4 +1,4 @@
 data/
 Classic Diffusion/wandb/
-Classic Diffusion/best_model.pth
-Classic Diffusion/UNET_Model2.pth
+Classic Diffusion/saved_checkpoints/
+Classic Diffusion/__pycache__/
