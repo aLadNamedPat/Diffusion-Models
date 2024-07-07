@@ -1,5 +1,3 @@
-# STILL A WORK IN PROGRESS
-
 # Diffusion-Based Models
 
 ![Original Paper](https://arxiv.org/pdf/2006.11239)
@@ -34,3 +32,10 @@ Then, as we want to produce new image samples, it's as simple as producing a new
 Using the series of timesteps we specified in the noising process, we continually apply the noise predictor to redefine the original image. Notice the z
 term in the image is continaully sampled and added to the denoised image which serves to model the stochasticity of the noising process to make denoising 
 non-deterministic.
+
+### Results
+I trained my diffusion model for 100 epochs with a 512-timestep cosinusoidal diffusion process. Learning rate was at 1e-4 and reduced learning rate was utilized.
+
+The results here are one of the best selection of 10 generated images together, so please bear that in mind. Note that they are not great and I suspect more training is needed.
+
+![Results](/Diffusion/results/Figure_1.png)

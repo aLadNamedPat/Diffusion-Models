@@ -1,1 +1,4 @@
 data/
+Classic Diffusion/wandb/
+Classic Diffusion/best_model.pth
+Classic Diffusion/UNET_Model2.pth

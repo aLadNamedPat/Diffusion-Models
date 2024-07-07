@@ -5,9 +5,6 @@ from Attention import MultiHeadedAttention
 from Embedding import SinusoidalEmbedding
 from Residual import ResidualBlock
 
-import os
-os.environ['CUDA_LAUNCH_BLOCKING'] = '1'
-os.environ['TORCH_USE_CUDA_DSA'] = '1'
 
 class MultiInputSequential(nn.Sequential):
     def forward(self, input, *args, **kwargs):
