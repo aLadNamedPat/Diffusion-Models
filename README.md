@@ -21,11 +21,7 @@ Training occurs as a series of steps as described here:
 ![TrainingSteps](/DescribingDiffusion/training.png)
 
 I wish papers would make explanations less math-dependent (we should expand out of our ecosterism!), but tldr, the model is trying to learn the 
-noise that is generated at each timestep. 
-
-I want to point out a key point you're probably wondering, why do we need to sample the timesteps when we are producing noisy images? Remember, we 
-want to make sure that our model is not learning dependencies between samples (this is one of the central theories of ML). 
-All samples taken should be therefore independent of one another.
+noise that is generated at each timestep. This is equivalent to learning epsilon, or the noise of the already noised image at every step (remember epsilon from the reparametrization trick!).
 
 ### Producing New Images
 Then, as we want to produce new image samples, it's as simple as producing a new noisy image that we want to de-noise through a series of timesteps
