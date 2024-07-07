@@ -42,3 +42,11 @@ I trained my diffusion model for 100 epochs with a 512-timestep cosinusoidal dif
 The results here are one of the best selection of 10 generated images together, so please bear that in mind. Note that they are not great and I suspect more training is needed.
 
 ![Results](results/Figure_1.png)
+
+Experimenting with the number of steps that noise is added seems to help the inferencing process a lot. Here are some results with a modified inferencing process
+
+![Results_Modified_One](results/Figure_2.png)
+
+![Results_Modified_Two](results/Figure_3.png)
+
+This leads me to believe that I did not use enough number of steps in the diffusion process. 512 is probably too little for the model to completely diffuse the model by itself. My guess is a higher amount like 1000 would provide better results.
