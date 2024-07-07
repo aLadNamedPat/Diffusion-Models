@@ -1,6 +1,6 @@
 # Diffusion-Based Models
 
-![Original Paper](https://arxiv.org/pdf/2006.11239)
+[Original Paper](https://arxiv.org/pdf/2006.11239)
 
 Lots of help from: https://github.com/filipbasara0/simple-diffusion/blob/main/simple_diffusion/model/unet.py
 Diffusion-based models operate slightly differently from our VAE model.
@@ -38,4 +38,4 @@ I trained my diffusion model for 100 epochs with a 512-timestep cosinusoidal dif
 
 The results here are one of the best selection of 10 generated images together, so please bear that in mind. Note that they are not great and I suspect more training is needed.
 
-![Results](/Diffusion/results/Figure_1.png)
+![Results](results/Figure_1.png)
