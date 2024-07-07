@@ -56,19 +56,19 @@ This leads me to believe that I did not use enough number of steps in the diffus
 I trained my diffusion model for 100 epochs again this time with 1000 timesteps. The following results were obtained by stopping gaussian noise after 300 inference steps (this makes the image generation significantly less blurry).
 
 <div style="display: flex; justify-content: space-around; align-items: center;">
-    <img src="results/denoised_images_0.gif" alt="Denoised Image 0" width ="200" />
-    <img src="results/denoised_images_1.gif" alt="Denoised Image 1" width ="200">
-    <img src="results/denoised_images_2.gif" alt="Denoised Image 2" width ="200">
-    <img src="results/denoised_images_3.gif" alt="Denoised Image 3" width ="200">
-    <img src="results/denoised_images_4.gif" alt="Denoised Image 4" width ="200">
+    <img src="results/denoised_images_0.gif" alt="Denoised Image 0" width ="150" />
+    <img src="results/denoised_images_1.gif" alt="Denoised Image 1" width ="150">
+    <img src="results/denoised_images_2.gif" alt="Denoised Image 2" width ="150">
+    <img src="results/denoised_images_3.gif" alt="Denoised Image 3" width ="150">
+    <img src="results/denoised_images_4.gif" alt="Denoised Image 4" width ="150">
 </div>
 
 This is the result obtained by stopping gaussian noise after 900 inference steps:
 
 <div style="display: flex; justify-content: space-around; align-items: center;">
-    <img src="results/g0.gif" alt="Denoised Image 0" width ="200">
-    <img src="results/g1.gif" alt="Denoised Image 1" width ="200">
-    <img src="results/g2.gif" alt="Denoised Image 2" width ="200">
-    <img src="results/g3.gif" alt="Denoised Image 3" width ="200">
-    <img src="results/g4.gif" alt="Denoised Image 4" width ="200">
+    <img src="results/g0.gif" alt="Denoised Image 0" width ="150">
+    <img src="results/g1.gif" alt="Denoised Image 1" width ="150">
+    <img src="results/g2.gif" alt="Denoised Image 2" width ="150">
+    <img src="results/g3.gif" alt="Denoised Image 3" width ="150">
+    <img src="results/g4.gif" alt="Denoised Image 4" width ="150">
 </div>
