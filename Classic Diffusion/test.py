@@ -42,11 +42,11 @@ Network.load_state_dict(torch.load("UNET_Model2.pth"))
 Network.eval()
 
 denoised_images = []
-for i in range(5):
+for i in range(10):
     random_noise = torch.randn((1, input_channels, 32, 32)).to(device)
     
     one_step = Network(random_noise, torch.tensor([1]).to(device))
-    denoised_image = diffusion.generate(model = Network, input_channels=1, num_inference_steps=50)
+    denoised_image = diffusion.generate(model = Network, input_channels=1, num_inference_steps=500)
     denoised_images.append(denoised_image)
 
 show_images(denoised_images)

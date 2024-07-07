@@ -121,7 +121,8 @@ class Diffusion_Scheduler():
         self, 
         x_0, 
         timestep, 
-        sample
+        sample,
+        last_step = False
     ):
         previous_timestep = timestep - self.steps // len(self.timesteps)
         cumulAlpha = self.cumulAlpha[timestep]
@@ -143,9 +144,9 @@ class Diffusion_Scheduler():
         pred_sample_direction = (1 - cumulAlphaPrev - std_dev**2) ** 0.5 * x_0
 
         prev_sample = cumulAlphaPrev**0.5 * pred_original_sample + pred_sample_direction
-
-        noise = torch.randn(x_0.shape).to(device)
-        prev_sample += std_dev * noise
+        if not last_step:
+            noise = torch.randn(x_0.shape).to(device)
+            prev_sample += std_dev * noise
 
         return prev_sample
     
@@ -158,13 +159,15 @@ class Diffusion_Scheduler():
         with torch.no_grad():
             image = torch.randn((1, input_channels, 32, 32)).to(device)
             self.set_timesteps(num_inference_steps)
+            last_step = False
             for t in tqdm(self.timesteps):
-
+                if (t <= 325):
+                    # print(True)
+                    last_step = True
                 model_output = model(image, torch.tensor([t]).to(device))
                 # predict previous mean of image x_t-1 and add variance depending on eta
                 # do x_t -> x_t-1
-                image = self.take_step(model_output, t, image)
-
+                image = self.take_step(model_output, t, image, last_step)
         return image
     
     def set_timesteps(
