@@ -1,14 +1,25 @@
 # Diffusion-Based Models
 
-[Original Paper](https://arxiv.org/pdf/2006.11239)
+Check out the original diffusion paper that I implemented from:
+[Original Diffusion Paper](https://arxiv.org/pdf/2006.11239)
+
+<div style="display: flex; justify-content: space-around; align-items: center;">
+    <img src="results/g0.gif" alt="Denoised Image 0" width ="150">
+    <img src="results/g1.gif" alt="Denoised Image 1" width ="150">
+    <img src="results/g2.gif" alt="Denoised Image 2" width ="150">
+    <img src="results/g3.gif" alt="Denoised Image 3" width ="150">
+    <img src="results/g4.gif" alt="Denoised Image 4" width ="150">
+</div>
 
 Lots of help from: https://github.com/filipbasara0/simple-diffusion/blob/main/simple_diffusion/model/unet.py
-Diffusion-based models operate slightly differently from our VAE model.
+Diffusion-based models operate differently from our VAE model.
 
 The model is no longer attempting to learn how to generate images from a latent space. Instead, the learning process is simplified
-by the model learning the random mixing to unmix photos and generate new ones from random samples.
+by the model learning the random mixing to unmix photos and generate new ones from random samples. The model does this by learning how to "unmix" 
+random noise into something coherent. We start out by taking big steps in noise reduction (and add some noise back in for stochasticity) and slowly
+lower the amount of noise reduction. The model effectively learns the amount of noise it should be removing at each step.
 
-I wasn't able to recreate the reverse diffusion process from purely the original paper. I'm not exactly sure why, but I believe it is something wrong
+I wasn't able to recreate the reverse diffusion process from purely the original paper. I'm not exactly sure why, but I believe it was something wrong
 with my implementation. However, I was able to find some results with the reverse diffusion process of this [paper](https://arxiv.org/pdf/2010.02502).
 
 ## How does this work?
@@ -23,6 +34,8 @@ Training occurs as a series of steps as described here:
 I wish papers would make explanations less math-dependent (we should expand out of our ecosterism!), but tldr, the model is trying to learn the 
 noise that is generated at each timestep. This is equivalent to learning epsilon, or the noise of the already noised image at every step (remember epsilon from the reparametrization trick!).
 
+conv fc fc deconv upsampledecon
+conv fc fc deconv upsampledecon
 ### Producing New Images
 Then, as we want to produce new image samples, it's as simple as producing a new noisy image that we want to de-noise through a series of timesteps
 
